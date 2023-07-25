@@ -132,38 +132,150 @@ function App() {
 	// </div>;
 
   /* ------------------------------------------------------------------- */
-  /* Навешивание событий в JSX */
-  
-/*   function showMess() {
-		alert('hello');
+  /* Использование функций в React */
+    /* function sqaure(num) {
+      return num ** 2;
+    }
+    function sqrt(num) {
+      return num ** 0.5
+    }
+    const sum = sqrt(sqaure(3) + sqaure(4))
+    return (
+      <div><p>Гипотенуза треугольинка со сторонами 3 и 4 равна: {sum} </p></div>
+    ) */
+  /* ------------------------------------------------------------------- */
+  /* Вызов функций внутри тегов в React */
+  /* Функция разворачивает строку */
+/*       function reverseString(str) {
+        let revString = '';
+        alert(str.length)
+        for (let i = str.length - 1; i >= 0; i--) {
+          // alert(i);
+          revString += str[i];
+        }
+        return revString
+      }
+      return (
+        <div>
+          <p>Строка: "Привет"</p>
+          <p>Инвертированная строка: "{reverseString("Привет")}"</p>
+        </div>
+      ) */
+
+      /* ------------------------------------------------------------------- */
+      /* Навешивание событий в JSX */
+      
+      /*   function showMess() {
+        alert('hello');
+      }
+      
+      return <div>
+      <button onClick={showMess}>show</button>
+      </div>; */
+      /*   function show1() {
+        alert(1);
+      }
+      
+      function show2() {
+        alert(2);
+      }
+      
+      return <div>
+      <button onClick={show1}>act1</button>
+      <button onClick={show2}>act2</button>
+      </div>; */
+  /* ------------------------------------------------------------------- */
+  /* Параметры в функции JSX */
+/*   function showMess(name) {
+      alert('hello, ' + name);
+    }
+    
+    return <div>
+      <button onClick={() => showMess('Jack')}>show1</button>
+      <button onClick={() => showMess('Mike')}>show2</button>
+    </div>; */
+  /* ------------------------------------------------------------------- */
+  /* Объект Event в React */
+/*   function func(event) {
+		console.log(event.target); // объект с событием
 	}
 	
 	return <div>
-		<button onClick={showMess}>show</button>
-	</div>; */
-/*   function show1() {
-		alert(1);
-	}
-	
-	function show2() {
-		alert(2);
-	}
-	
-	return <div>
-		<button onClick={show1}>act1</button>
-		<button onClick={show2}>act2</button>
+		<button onClick={func}>act</button>
 	</div>; */
   /* ------------------------------------------------------------------- */
   /* Объект Event при передаче параметров */
-  function func(arg, event) {
-		console.log(arg, event);
+  /*   function func(arg, event) {
+    console.log(arg, event);
 	}
 	
 	return <div>
-		<button onClick={event => func('eee', event)}>act</button>
-	</div>;
-
-}
+  <button onClick={event => func('eee', event)}>act</button>
+	</div>; */
+  /* ------------------------------------------------------------------- */
+  /* Теги в массивах JSX */
+  /*   const arr = [<p>1</p>,<p>2</p>,<p>3</p>];
+  return (
+    <div>
+    {arr}
+    </div>
+    ) */
+    /* ------------------------------------------------------------------- */
+    /* Формирование массива тегов в цикле React */
+    /*   const arr = [];
+    for (let i = 0; i < 5; i++) {
+      arr.push(<p>{i}</p>);
+    }
+    return (
+      <div>
+      {arr}
+      </div>
+      ) */
+      /* ------------------------------------------------------------------- */
+      /* Формирование тегов из массива с данными в React */
+      // const res = [];
+      // for (const elem of arr) {
+        //   res.push(<p>{elem}</p>);
+        // }
+        /*       const arr = [1, 2, 3, 4, 5];
+        const res = arr.map(function(item) {
+          return <p>{item}</p>;
+        });
+        return <div>
+        {res}
+        </div> */
+        /* ------------------------------------------------------------------- */
+    /* Уникальные ключи в массиве тегов в React */
+/*     const arr = [1, 2, 3, 4, 5];
+      
+    const res = arr.map(function(item, index) {
+      return <p key={index}>{item}</p>;
+    });
+    return (
+      <div>
+        {res}
+      </div>
+    ); */
+/* ------------------------------------------------------------------- */
+/* Вывод массива объектов в React */
+    const prods = [
+      {name: 'product1', cost: 100},
+      {name: 'product2', cost: 200},
+      {name: 'product3', cost: 300},
+    ];
+    const res = prods.map(function(item, index) { 
+      /* добавляем каждому элементу атрибут key */
+      return <p key={index}> 
+        <span>{item.name}</span>:
+        <span>{item.cost}</span>
+      </p>;
+    });
+    
+    return <div>
+      {res}
+    </div>;
+    
+} 
 
 
 
