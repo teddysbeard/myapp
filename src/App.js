@@ -258,23 +258,61 @@ function App() {
     ); */
 /* ------------------------------------------------------------------- */
 /* Вывод массива объектов в React */
-    const prods = [
+/* const prods = [
       {name: 'product1', cost: 100},
       {name: 'product2', cost: 200},
       {name: 'product3', cost: 300},
     ];
-    const res = prods.map(function(item, index) { 
-      /* добавляем каждому элементу атрибут key */
-      return <p key={index}> 
-        <span>{item.name}</span>:
+    // добавляем каждому элементу атрибут key
+    const res = prods.map(function(item, index) {
+      return <p key={index}>
+      <span>{item.name}</span>:
         <span>{item.cost}</span>
+        </p>;
+      });
+      
+      return <div>
+      {res}
+      </div>;
+      */
+    /* ------------------------------------------------------------------- */
+    /* Задание 1. Выведите элементы этого массива в виде списка ul. */
+    const users = [
+    {id: '1', name: 'user1', surn: 'surn1', age: 30},
+    {id: '2', name: 'user2', surn: 'surn2', age: 31},
+    {id: '3', name: 'user3', surn: 'surn3', age: 32},
+  ];
+  const res = users.map(function(item) {
+    return <li key={item.id}>
+    <span>{item.name}, </span>
+    <span>{item.surn}, </span>
+    <span>{item.age}</span>
+      </li>
+    });
+    return (
+    <ul>
+    {res}
+    </ul>
+    );
+    /* ------------------------------------------------------------------- */
+    /* Уникальные ключи через id в React */
+    /* const prods = [
+      {id: 1, name: 'product1', cost: 100}, // добавим свойство id с номером продукта
+      {id: 2, name: 'product2', cost: 200}, // добавим свойство id с номером продукта
+      {id: 3, name: 'product3', cost: 300}, // добавим свойство id с номером продукта
+    ];
+    const res = prods.map(function(item) {
+      // атрибут key не отображается в верстке
+      return <p key={item.id}>
+        <span>{item.name}: </span>
+        <span>{item.cost} </span>
       </p>;
     });
     
     return <div>
       {res}
-    </div>;
-    
+    </div>; */
+
 } 
 
 
