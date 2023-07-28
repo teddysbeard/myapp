@@ -277,7 +277,7 @@ function App() {
       */
     /* ------------------------------------------------------------------- */
     /* Задание 1. Выведите элементы этого массива в виде списка ul. */
-    const users = [
+    /* const users = [
     {id: '1', name: 'user1', surn: 'surn1', age: 30},
     {id: '2', name: 'user2', surn: 'surn2', age: 31},
     {id: '3', name: 'user3', surn: 'surn3', age: 32},
@@ -293,7 +293,7 @@ function App() {
     <ul>
     {res}
     </ul>
-    );
+    ); */
     /* ------------------------------------------------------------------- */
     /* Уникальные ключи через id в React */
     /* const prods = [
@@ -304,15 +304,35 @@ function App() {
     const res = prods.map(function(item) {
       // атрибут key не отображается в верстке
       return <p key={item.id}>
-        <span>{item.name}: </span>
-        <span>{item.cost} </span>
+      <span>{item.name}: </span>
+      <span>{item.cost} </span>
       </p>;
     });
     
     return <div>
-      {res}
+    {res}
     </div>; */
-
+  /* ------------------------------------------------------------------- */
+  /* Вывод массива объектов в виде HTML таблицы в React */
+  const prods = [
+    {id: 1, name: 'product1', cost: 100},
+    {id: 2, name: 'product2', cost: 200},
+    {id: 3, name: 'product3', cost: 300},
+  ];
+  const rows = prods.map(function(item) {
+    return <tr key={item.id}>
+    <td>{item.name}</td>
+    <td>{item.cost}</td>
+    </tr>;
+  });
+  return (
+  <table>
+    <tbody>
+      {rows}
+    </tbody>
+  </table>
+  )
+    
 } 
 
 
