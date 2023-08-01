@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 <script src="http://10.211.1.92:8097"></script>
 function App() {
   // const  elem = <div>
@@ -314,7 +315,7 @@ function App() {
     </div>; */
   /* ------------------------------------------------------------------- */
   /* Вывод массива объектов в виде HTML таблицы в React */
-  const prods = [
+  /* const prods = [
     {id: 1, name: 'product1', cost: 100},
     {id: 2, name: 'product2', cost: 200},
     {id: 3, name: 'product3', cost: 300},
@@ -331,8 +332,30 @@ function App() {
       {rows}
     </tbody>
   </table>
-  )
-    
+  ) */
+  /* Введение в стейты в React */ 
+  /* const [name, setName] = useState('prod');
+  // function clickHandler() {
+  //   setName('xxxx');
+  // }
+	// Выведем название продукта в верстке и сделаем кнопку, по которой стейт будет меняться
+	return <div>
+		<span>{name}</span>
+    <button onClick={() => setName('xxxx')}>btn</button>
+	</div>; */
+  /* Задание 1. Даны стейты с именем и фамилией юзера. Выведите их в верстке. Сделайте кнопки для изменения этих стейтов. */
+/* const [name, setName] = useState('Name');
+const [surname, setSurname] = useState('Surname');
+return <div>
+		<span>Пользователь: {name} {surname}</span>
+    <br></br>
+    <br></br>
+    <button onClick={() => setName('John')}>Нажмите, чтобы изменить имя</button>
+    <br></br>
+    <br></br>
+    <button onClick={() => setSurname('Spencer')}>Нажмите, чтобы изменить фамилию</button>
+	</div>; */
+  
 } 
 
 
